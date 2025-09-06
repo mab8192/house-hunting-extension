@@ -8,10 +8,10 @@ function scrapeHouseData() {
     const address = `${street}, ${cityStateZip}`;
 
     const topElements = document.querySelectorAll('.prop-details-overview li');
-    const price = topElements[0].querySelector('span').textContent;
+    const priceE = topElements[0].querySelector('span').textContent;
     const beds = topElements[1].querySelector('span').textContent;
     const baths = topElements[2].querySelector('span').textContent;
-    const sqft = topElements[3].querySelector('span').textContent;
+    const sqftE = topElements[3].querySelector('span').textContent;
 
     const lotSizeUl = document.querySelector("#prop_size");
     let lotSize = null;
@@ -23,6 +23,8 @@ function scrapeHouseData() {
         }
     }
 
+    const price = priceE ? parseInt(priceE.replace(/[$,]/g, ''), 10) : null;
+    const sqft = sqftE ? parseInt(sqftE.replace(/,/g, ''), 10) : null;
 
     // Return the data as a single object
     return {
