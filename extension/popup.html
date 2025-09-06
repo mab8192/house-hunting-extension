@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <h2 class="title">🏠 Notion House Hunter</h2>
+    <form id="credentialsForm">
+        <div class="form-group">
+            <label for="notionApiKey">Notion API Key</label>
+            <input type="text" id="notionApiKey" placeholder="Enter Notion API Key" autocomplete="off" />
+        </div>
+        <div class="form-group">
+            <label for="databaseId">Database ID</label>
+            <input type="text" id="databaseId" placeholder="Enter Database ID" autocomplete="off" />
+        </div>
+        <button type="button" id="saveCredentialsButton">Save Credentials</button>
+    </form>
+    <!-- Save to Notion button removed; process runs automatically -->
+    <div id="status"></div>
+    <script src="popup.js"></script>
+</body>
+</html>
